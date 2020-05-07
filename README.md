@@ -19,7 +19,8 @@ These instructions will get you a copy of the project up and running on your loc
 5. Scan the QR Code with your Smartphone to see a live demo.
 
 
-## Deployment
+## Upload and Download Changes (GIT Push and Pull)
+https://www.datacamp.com/community/tutorials/git-push-pull
 
 Add additional notes about how to deploy this on a live system
 
