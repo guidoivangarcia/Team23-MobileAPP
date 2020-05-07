@@ -49,7 +49,7 @@ class Home extends React.Component {
 
         {this.renderArticles()}
         {/* <Block flex center style={styles.boton}>
-          <Button  onPress={() => navigation.navigate("ListaDeCompras")} round size="small" color="success">Button</Button>
+          <Button  onPress={() => navigation.navigate("NewScreen")} round size="small" color="success">Button</Button>
         </Block> */}
       </Block>
     );

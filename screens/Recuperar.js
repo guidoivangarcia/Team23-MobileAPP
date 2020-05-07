@@ -63,8 +63,8 @@ handlePassword = (text) => {
       //METODOS PARA ENVIAR EMAIL
       sendEmail(
         'admin@team23.de',
-        'Me olvide la Contraseña!',
-        'Me olvide la contraseña de mi cuenta de Team23'
+        'Forget Password!',
+        'I forgot my Team23 account password'
     ).then(() => {
         console.log('Our email successful provided to device mail ');
     });
@@ -88,8 +88,7 @@ okLogin()
 {
   const { navigate } = this.props.navigation;
   console.log('username:', this.state.username + " online")
-  //alert('Hola ' + this.state.username + ', tu cuenta ha sido creada con exito!  seras redirigido al inicio...');
-  Alert.alert("Hello " + this.state.username, "Sera redirigido/a al Inicio", [
+  Alert.alert("Hello " + this.state.username, "You will be redirected to the Home Screen", [
     {    
       text: "OK",
       onPress: () => navigate("Home")

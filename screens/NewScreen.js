@@ -6,7 +6,7 @@ import articles from '../constants/articulosLista';
 import DialogInput from 'react-native-dialog-input';
 const { width } = Dimensions.get('screen');
 
-class ListaDeCompras extends React.Component {
+class NewScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isAlertVisible:false };
@@ -108,7 +108,7 @@ class ListaDeCompras extends React.Component {
     const { navigation } = this.props;
     return (
       
-      <Block flex center style={styles.ListaDeCompras}>
+      <Block flex center style={styles.NewScreen}>
         <Block style={{ marginBottom: theme.SIZES.BASE }}>
         <Header tabs={tabs.categories} search title="Lista de Compras" navigation={this.props.navigation} />
       </Block>
@@ -133,7 +133,7 @@ class ListaDeCompras extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  ListaDeCompras: {
+  NewScreen: {
     width: width,    
   },
   boton: {
@@ -145,4 +145,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListaDeCompras;
+export default NewScreen;

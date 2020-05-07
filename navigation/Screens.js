@@ -19,12 +19,9 @@ import Login from "../screens/Login";
 import Register from "../screens/Register";
 import Recuperar from "../screens/Recuperar";
 import Elements from "../screens/Elements";
-import MapDirections from "../screens/MapDirections";
-import MapDirections2 from "../screens/MapDirections2";
 import Articles from "../screens/Articles";
-import ListaDeCompras from "../screens/ListaDeCompras";
-import ListasGuardadas from "../screens/ListasGuardadas";
-import MapaTiendas from "../screens/MapOnly";
+import NewScreen from "../screens/NewScreen";
+import TasksGoals from "../screens/TasksGoals";
 // drawer
 import Menu from "./Menu";
 import DrawerItem from "../components/DrawerItem";
@@ -134,10 +131,10 @@ const CalendarStack = createStackNavigator(
   }
 );
 
-const ListasGuardadasStack = createStackNavigator(
+const TasksGoalsStack = createStackNavigator(
   {
-    ListasGuardadas: {
-      screen: ListasGuardadas,
+    TasksGoals: {
+      screen: TasksGoals,
       navigationOptions: ({ navigation }) => ({
         header: (
           <Header white transparent title="Tasks" iconColor={'#FFF'} navigation={navigation} />
@@ -170,64 +167,15 @@ const RecuperarStack = createStackNavigator(
   }
 );
 
-const MapDirectionsStack = createStackNavigator(
-  {
-    MapDirections: {
-      screen: MapaTiendas,
-      navigationOptions: ({ navigation }) => ({
-        header: (
-          <Header white transparent title="Mapa" iconColor={'#FFF'} navigation={navigation} />
-        ),
-        headerTransparent: true
-      })
-    }
-  },
-  {
-    cardStyle: { backgroundColor: "#FFFFFF" },
-    transitionConfig
-  }
-);
 
-const RutaMapaStack = createStackNavigator(
-  {
-    RutaMapa: {
-      screen: MapDirections,
-      navigationOptions: ({ navigation }) => ({
-        header: (
-          <Header white transparent title="Mapa" iconColor={'#FFF'} navigation={navigation} />
-        ),
-        headerTransparent: true
-      })
-    }
-  },
-  {
-    cardStyle: { backgroundColor: "#FFFFFF" },
-    transitionConfig
-  }
-);
 
-const RutaMapa2Stack = createStackNavigator(
-  {
-    RutaMapa: {
-      screen: MapDirections2,
-      navigationOptions: ({ navigation }) => ({
-        header: (
-          <Header white transparent title="Mapa" iconColor={'#FFF'} navigation={navigation} />
-        ),
-        headerTransparent: true
-      })
-    }
-  },
-  {
-    cardStyle: { backgroundColor: "#FFFFFF" },
-    transitionConfig
-  }
-);
 
-const ListaDeComprasStack = createStackNavigator(
+
+
+const NewScreenStack = createStackNavigator(
   {
-    ListaDeCompras: {
-      screen: ListaDeCompras,
+    NewScreen: {
+      screen: NewScreen,
       navigationOptions: ({ navigation }) => ({
         header: (
           <Header white transparent title="" iconColor={'#FFF'} navigation={navigation} />
@@ -314,31 +262,19 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
-    ListasGuardadas: {
-      screen: ListasGuardadasStack,
+    TasksGoals: {
+      screen: TasksGoalsStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="ListasGuardadas" title="Tasks" />
+          <DrawerItem focused={focused} screen="TasksGoals" title="Tasks" />
         )
       })
     },
-    RutaMapa: {
-      screen: RutaMapaStack,
-      navigationOptions: {
-        drawerLabel: () => {}
-      }
-    },
-    RutaMapa2: {
-      screen: RutaMapa2Stack,
-      navigationOptions: {
-        drawerLabel: () => {}
-      }
-    },
-    ListaDeCompras: {
-      screen: ListasGuardadasStack,
+    NewScreen: {
+      screen: TasksGoalsStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="ListasGuardadas" title="" />
+          <DrawerItem focused={focused} screen="TasksGoals" title="" />
         )
       })
     },

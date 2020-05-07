@@ -19,7 +19,7 @@ const { width, height } = Dimensions.get("screen");
 
 const thumbMeasure = (width - 48 - 32) / 3;
 
-class ListasGuardadas extends React.Component {
+class TasksGoals extends React.Component {
 
   renderArticles = () => {
     const { navigation } = this.props;
@@ -44,7 +44,7 @@ class ListasGuardadas extends React.Component {
     )
   }
 
-  renderListasGuardadas = () => {
+  renderTasksGoals = () => {
     return (
       <ScrollView 
         showsVerticalScrollIndicator={false}
@@ -104,7 +104,7 @@ class ListasGuardadas extends React.Component {
                     <Block style={styles.divider} />
                   </Block>
                   <Block middle>
-                  {/* {this.renderListasGuardadas()} */}
+                  {/* {this.renderTasksGoals()} */}
                   {/* {this.renderArticles()} */}
                   </Block>
                   <Block
@@ -195,4 +195,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ListasGuardadas;
+export default TasksGoals;

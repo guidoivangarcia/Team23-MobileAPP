@@ -24,7 +24,7 @@ const BellButton = ({isWhite, style, navigation}) => (
 );
 
 const BasketButton = ({isWhite, style, navigation}) => (
-  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('ListaDeCompras')}>
+  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('NewScreen')}>
     <Icon
       family="ArgonExtra"
       size={16}
@@ -58,21 +58,9 @@ const GoBackButtonListas = ({isWhite, style, navigation}) => (
   </TouchableOpacity>
 );
 
-const GoBackButtonMapa = ({isWhite, style, navigation}) => (
-  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Home')}>
-    <Icon
-      family="ArgonExtra"
-      size={22}
-      name="nav-left"
-      color={argonTheme.COLORS[isWhite ? 'BLACK' : 'ICON']}
-    />
-    <Text style={{fontSize: 16, fontWeight: 'bold'}}>Logout</Text>
-  </TouchableOpacity>
-  
-);
 
 const SearchButton = ({isWhite, style, navigation}) => (
-  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('ListaDeCompras')}>
+  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('NewScreen')}>
     <Icon
       size={16}
       family="Galio"
@@ -147,20 +135,11 @@ class Header extends React.Component {
           <BellButton key='chat-search' navigation={navigation} isWhite={white} />,
           <BasketButton key='basket-search' navigation={navigation} isWhite={white} />
         ]);
-      case 'ListasGuardadas':
+      case 'TasksGoals':
         return ([
           <GoBackButton key='nav-left' navigation={navigation} isWhite={white} />
         ]);
-      case 'MapDirections':
-        return ([
-          
-          <GoBackButtonMapa key='nav-left' navigation={navigation} isWhite={white} />
-        ]);
-      case 'RutaMapa':
-        return ([
-          <GoBackButtonMapa key='nav-left' navigation={navigation} isWhite={white} />
-        ]);
-      case 'ListaDeCompras':
+      case 'NewScreen':
         return ([
           <GoBackButtonListas key='nav-left' navigation={navigation} isWhite={white} />
         ]);
@@ -187,13 +166,13 @@ class Header extends React.Component {
 
     return (
       <Block row style={styles.options}>
-        {/* <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('ListaDeCompras')}>
+        {/* <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('NewScreen')}>
           <Block row middle>
             <Icon name="diamond" family="ArgonExtra" style={{ paddingRight: 8}} color={argonTheme.COLORS.ICON} />
             <Text size={16} style={styles.tabTitle}>{optionLeft || 'Promociones'}</Text>
           </Block>
         </Button>
-        <Button shadowless style={styles.tab} onPress={() => navigation.navigate('ListasGuardadas')}>
+        <Button shadowless style={styles.tab} onPress={() => navigation.navigate('TasksGoals')}>
           <Block row middle>
             <Icon size={16} name="bag-17" family="ArgonExtra"  color={argonTheme.COLORS.ICON}/>
             <Text size={16} style={styles.tabTitle}>{optionRight || 'Listas de Compras'}</Text>
