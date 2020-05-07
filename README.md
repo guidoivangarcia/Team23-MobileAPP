@@ -1,5 +1,9 @@
 # Team23-MobileAPP
-project description goes here
+When new employees start working, especially in fast-growing companies, a good onboarding process is the key to a good corporate climate and long-term employee loyalty. However, due to advancing digitalization and increasing complexity in projects and changes in work in general, a good onboard has become extremely complex today. Because a simple checklist alone is no longer sufficient here, since it only picks up the employee in a structurally-functional manner. But good onboard requires new team members especially with soft topics such as values, feeling safe, unwritten rules, dealing with problems, desired behaviors and much more.
+
+A holistic concept and tool for holistic onboarding closes this gap and enables new colleagues to arrive optimally. In addition to central software, methods such as short internal videos, time-controlled push notifications and quizzes can also be used. context-related messages, chatbots and offline elements such as a value workshop or onboarding rituals (baking cakes from the basic values ​​of the new company) are used.
+
+Accordingly, in addition to research, a strong, holistic concept must also be developed, which is then mapped and bundled in a web application. This can then be functionally expanded to include the various concepts and strengthened by gamification elements.
 
 ### Prerequisites
 What things you need to install the software and how to install them
