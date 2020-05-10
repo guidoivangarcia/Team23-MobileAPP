@@ -14,7 +14,7 @@ import { Images, argonTheme } from "../constants";
 import { sendEmail } from './send-email';
 const { width, height } = Dimensions.get("screen");
 
-class Recuperar extends React.Component {
+class Recover extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -232,4 +232,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Recuperar;
+export default Recover;

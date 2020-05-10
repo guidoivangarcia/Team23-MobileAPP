@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
   StyleSheet,
   Dimensions,
   ScrollView,
   Image,
   ImageBackground,
-  Platform
+  Platform,
+  TextInput
 } from "react-native";
-import { Block, Text, theme } from "galio-framework";
-import { Rating, AirbnbRating } from 'react-native-ratings';
+import { Block, Text, theme, Input, Checkbox } from "galio-framework";
 import { Button } from "../components";
 import { Images, argonTheme } from "../constants";
 import { HeaderHeight } from "../constants/utils";
@@ -16,6 +16,7 @@ import { HeaderHeight } from "../constants/utils";
 const { width, height } = Dimensions.get("screen");
 
 const thumbMeasure = (width - 48 - 32) / 3;
+
 
 class Profile extends React.Component {
   
@@ -113,29 +114,55 @@ class Profile extends React.Component {
                   
                   <Block
                     flex
-                    style={{ paddingVertical: 15 }}
+                    style={{ paddingVertical: 5 }}
                   >
-                  <Block flex style={{paddingBottom: 10 }}>
-                    <Text bold size={16} color="#525F7F">
-                      Birth Date:
+                  <Block flex style={{paddingBottom: 5 }}>
+                    <Text bold size={12} color="#525F7F">
+                        Birth Date:
                     </Text>
-                  </Block>
-                  <Block flex style={{paddingBottom: 10 }}>
-                    <Text bold size={16} color="#525F7F">
-                      Adress:
+                      <Input
+                        placeholder="02/04/1997"
+                        style={{ borderColor: "green" }}
+                        help=" "
+                        bottomHelp
+                        placeholderTextColor="#4F8EC9"
+                      />
+                    </Block>
+                  <Block flex style={{paddingBottom: 5 }}>
+                  <Text bold size={12} color="#525F7F">
+                    Adress:
                     </Text>
+                    <Input
+                        placeholder="Deutschenbaurstraße 39"
+                        style={{ borderColor: "green" }}
+                        help=" "
+                        bottomHelp
+                        placeholderTextColor="#4F8EC9"
+                      />
                   </Block>
-                  <Block flex style={{paddingBottom: 10 }}>
-                    <Text bold size={16} color="#525F7F">
-                    Soccer Team:
+
+                  <Block flex style={{paddingBottom: 5 }}>
+                  <Text bold size={12} color="#525F7F">
+                    Phone number:
                     </Text>
+                    <Input
+                        placeholder="+49 137 123456"
+                        style={{ borderColor: "green" }}
+                        help=" "
+                        bottomHelp
+                        placeholderTextColor="#4F8EC9"
+                      />
                   </Block>
-                  <Block flex style={{paddingBottom: 10 }}>
-                    <Text bold size={16} color="#525F7F">
-                    Smoke?
-                    </Text>
+
+                  <Block flex style={{paddingBottom: 5 }}>
+
+                  <Checkbox color="success" initialValue={true} label="Availability to travel" iconFamily="font-awesome" iconName="plane" />
                   </Block>
-                    
+                    <Block flex style={{ paddingBottom: 10 }}>
+                    <Checkbox color="success" initialValue={true} label="Smoke?" iconFamily="font-awesome" iconName="smoke" />
+                  
+                    </Block>
+
                   </Block>
                   
                   

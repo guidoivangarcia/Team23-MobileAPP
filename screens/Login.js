@@ -209,7 +209,7 @@ okLogin()
                       </Block> */}
                       <Block middle row style={styles.passwordCheck2}>
 
-                      <Button onPress={() => navigation.navigate("Recuperar")} color="primary" style={styles.createButton2}>
+                      <Button onPress={() => navigation.navigate("Recover")} color="primary" style={styles.createButton2}>
                       <Text size={12} 
                      // color={argonTheme.COLORS.MUTED}
                       >

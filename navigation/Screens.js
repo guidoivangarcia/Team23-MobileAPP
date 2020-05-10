@@ -17,7 +17,7 @@ import Profile from "../screens/Profile";
 import Calendar from "../screens/Calendar";
 import Login from "../screens/Login";
 import Register from "../screens/Register";
-import Recuperar from "../screens/Recuperar";
+import Recover from "../screens/Recover";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
 import NewScreen from "../screens/NewScreen";
@@ -149,10 +149,10 @@ const TasksGoalsStack = createStackNavigator(
   }
 );
 
-const RecuperarStack = createStackNavigator(
+const RecoverStack = createStackNavigator(
   {
-    Recuperar: {
-      screen: Recuperar,
+    Recover: {
+      screen: Recover,
       navigationOptions: ({ navigation }) => ({
         header: (
           <Header white transparent title="Reset Password" iconColor={'#FFF'} navigation={navigation} />
@@ -271,10 +271,10 @@ const AppStack = createDrawerNavigator(
       })
     },
     NewScreen: {
-      screen: TasksGoalsStack,
+      screen: NewScreenStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="TasksGoals" title="" />
+          <DrawerItem focused={focused} screen="NewScreen" title="" />
         )
       })
     },
@@ -292,8 +292,8 @@ const AppStack = createDrawerNavigator(
         drawerLabel: () => {}
       }
     },
-    Recuperar: {
-      screen: RecuperarStack,
+    Recover: {
+      screen: RecoverStack,
       navigationOptions: navOpt => ({
         drawerLabel: () => {}
       })
