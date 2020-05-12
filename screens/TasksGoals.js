@@ -8,7 +8,7 @@ import {
   ImageBackground,
   Platform
 } from "react-native";
-import { Block, Text, theme } from "galio-framework";
+import { Block, Text, theme, Checkbox } from "galio-framework";
 import { Rating, AirbnbRating } from 'react-native-ratings';
 import { Button } from "../components";
 import articles from '../constants/articulosLista';
@@ -104,6 +104,7 @@ class TasksGoals extends React.Component {
                     <Block style={styles.divider} />
                   </Block>
                   <Block middle>
+                  <Checkbox color="success" initialValue={false} label="Task 1" iconFamily="font-awesome" iconName="smoke" />
                   {/* {this.renderTasksGoals()} */}
                   {/* {this.renderArticles()} */}
                   </Block>

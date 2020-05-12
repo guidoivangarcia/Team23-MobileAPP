@@ -2,6 +2,7 @@ import React from "react";
 import { Easing, Animated } from "react-native";
 import {
   createStackNavigator,
+  createSwitchNavigator,
   createDrawerNavigator,
   createAppContainer
 } from "react-navigation";
@@ -167,11 +168,6 @@ const RecoverStack = createStackNavigator(
   }
 );
 
-
-
-
-
-
 const NewScreenStack = createStackNavigator(
   {
     NewScreen: {
@@ -229,7 +225,7 @@ const HomeStack = createStackNavigator(
 );
 
 
-
+// Left Menu
 const AppStack = createDrawerNavigator(
   {
     Onboarding: {
@@ -273,11 +269,10 @@ const AppStack = createDrawerNavigator(
     NewScreen: {
       screen: NewScreenStack,
       navigationOptions: navOpt => ({
-        drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="NewScreen" title="" />
-        )
+        drawerLabel: () => {}
       })
     },
+    // Login / Logout
     Login: {
       screen: Login,
       navigationOptions: navOpt => ({
@@ -301,6 +296,14 @@ const AppStack = createDrawerNavigator(
   },
   Menu
 );
+// To separate the authentication flow
+const SwitchNavigator = createSwitchNavigator({
+  Onboarding: { screen: Onboarding },
+  Login: { screen: Login },
+  Register: { screen: Register },
+  Recover: { screen: Recover },
+  drawer: { screen: AppStack }
+});
 
-const AppContainer = createAppContainer(AppStack);
+const AppContainer = createAppContainer(SwitchNavigator);
 export default AppContainer;

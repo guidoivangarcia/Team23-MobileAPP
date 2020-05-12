@@ -24,7 +24,7 @@ const BellButton = ({isWhite, style, navigation}) => (
 );
 
 const BasketButton = ({isWhite, style, navigation}) => (
-  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('NewScreen')}>
+  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('TasksGoals')}>
     <Icon
       family="ArgonExtra"
       size={16}

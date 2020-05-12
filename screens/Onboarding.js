@@ -63,7 +63,7 @@ class Onboarding extends React.Component {
                 <Button
                     
                     color={argonTheme.COLORS.SECONDARY}
-                    onPress={() => navigation.navigate("NewScreen")}
+                    onPress={() => navigation.navigate("Register")}
                     textStyle={{ color: argonTheme.COLORS.BLACK }}
                   >Register an Account</Button>
               </Block>

@@ -159,10 +159,13 @@ class Profile extends React.Component {
                   <Checkbox color="success" initialValue={true} label="Availability to travel" iconFamily="font-awesome" iconName="plane" />
                   </Block>
                     <Block flex style={{ paddingBottom: 10 }}>
-                    <Checkbox color="success" initialValue={true} label="Smoke?" iconFamily="font-awesome" iconName="smoke" />
+                    <Checkbox color="success" initialValue={false} label="Smoke?" iconFamily="font-awesome" iconName="smoke" />
                   
                     </Block>
-
+                  <Block flex style={{paddingBottom: 5 }}>
+                  <Checkbox color="success" initialValue={false} label="Driver License?" iconFamily="font-awesome" iconName="smoke" />
+                  </Block>
+                  
                   </Block>
                   
                   

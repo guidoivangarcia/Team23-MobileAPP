@@ -1,12 +1,36 @@
 import React from 'react';
 import { TouchableOpacity, TouchableHighlight, Image, FlatList, StyleSheet, Dimensions, ScrollView, View, Text } from 'react-native';
-import { Button, Block, theme } from 'galio-framework';
+import { Button, Block, theme, Accordion } from 'galio-framework';
 
-import { Card } from '../components';
+import { Card, Card2 } from '../components';
 import articles from '../constants/articulosLista';
 const { width } = Dimensions.get('screen');
 const extractKey = ({ categories }) => categories;
-
+const data = [
+  {
+    title: "Notification", content: "Lorem ipsum dolor sit amet",
+    icon: {
+      name: 'keyboard-arrow-up',
+      family: 'material',
+      size: 18,
+    }
+  },
+  {
+    title: "Notification", content: "Lorem ipsum dolor sit amet",
+    icon: {
+      name: 'keyboard-arrow-up',
+      family: 'material',
+      size: 18,
+    }
+  }, {
+    title: "Notification", content: "Lorem ipsum dolor sit amet",
+    icon: {
+      name: 'keyboard-arrow-up',
+      family: 'material',
+      size: 18,
+    }
+  },
+];
 class Home extends React.Component {
   componentDidMount() {
     this.getProductos();
@@ -18,6 +42,8 @@ class Home extends React.Component {
       .then(results => this.setState({ rows: results }));
   }
   
+
+  
   renderArticles = () => {
     const { navigation } = this.props;
     return (
@@ -28,6 +54,11 @@ class Home extends React.Component {
           flexDirection: 'column',
           alignItems: 'center',
         }}>
+          <Block style={{ height: '15%' }}>
+            <Accordion dataArray={data} />
+          </Block>
+
+          <Card item={articles[0]} horizontal  />
           <Card item={articles[0]} horizontal  /> 
           <Card item={articles[1]} horizontal  /> 
           <Card item={articles[2]} horizontal  />
