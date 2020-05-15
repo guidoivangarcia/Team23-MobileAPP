@@ -54,7 +54,7 @@ class Home extends React.Component {
           flexDirection: 'column',
           alignItems: 'center',
         }}>
-          <Block style={{ height: '15%' }}>
+          <Block style={{ width: '15%' }}>
             <Accordion dataArray={data} />
           </Block>
 

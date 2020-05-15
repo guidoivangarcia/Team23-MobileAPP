@@ -93,7 +93,7 @@ class ApiController extends Component {
                 if (responseData.username== usuarioBuscado.username){
                     okLogin();
                     console.log("usuario online");  
-                    return AsyncStorage.setItem(USER_STORAGE_KEY, usuarioBuscado.username)
+                    //return AsyncStorage.setItem(USER_STORAGE_KEY, usuarioBuscado.username)
                 }else{ 
                     noOkLogin();
                     throw new Error("credenciales ingresadadas invalidas")

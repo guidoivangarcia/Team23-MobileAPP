@@ -15,6 +15,7 @@ import Onboarding from "../screens/Onboarding";
 import Mission from "../screens/Mission";
 import Vission from "../screens/Vission";
 import Profile from "../screens/Profile";
+import MyBuddy from "../screens/MyBuddy";
 import Calendar from "../screens/Calendar";
 import Login from "../screens/Login";
 import Register from "../screens/Register";
@@ -103,6 +104,23 @@ const ProfileStack = createStackNavigator(
       navigationOptions: ({ navigation }) => ({
         header: (
           <Header white transparent title="Profile" iconColor={'#FFF'} navigation={navigation} />
+        ),
+        headerTransparent: true
+      })
+    }
+  },
+  {
+    cardStyle: { backgroundColor: "#FFFFFF" },
+    transitionConfig
+  }
+);
+const MyBuddyStack = createStackNavigator(
+  {
+    MyBuddy: {
+      screen: MyBuddy,
+      navigationOptions: ({ navigation }) => ({
+        header: (
+          <Header white transparent title="My Buddy" iconColor={'#FFF'} navigation={navigation} />
         ),
         headerTransparent: true
       })
@@ -263,6 +281,14 @@ const AppStack = createDrawerNavigator(
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="TasksGoals" title="Tasks" />
+        )
+      })
+    },
+    MyBuddy: {
+      screen: MyBuddyStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="MyBuddy" title="My Buddy" />
         )
       })
     },

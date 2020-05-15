@@ -19,7 +19,7 @@ const { width, height } = Dimensions.get("screen");
 const thumbMeasure = (width - 48 - 32) / 3;
 
 
-class Profile extends React.Component {
+class MyBuddy extends React.Component {
   state = {
     textValue: 'EDIT',
     count: '0'
@@ -266,4 +266,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Profile;
+export default MyBuddy;

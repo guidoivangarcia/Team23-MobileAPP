@@ -55,6 +55,15 @@ class DrawerItem extends React.Component {
             color={focused ? "white" : argonTheme.COLORS.ICON}
           />
         );
+        case "My Buddy":
+        return (
+          <Icon
+            name="spaceship"
+            family="ArgonExtra"
+            size={12}
+            color={focused ? "white" : argonTheme.COLORS.ICON}
+          />
+        );
       case "Calendar":
         return (
           <Icon
