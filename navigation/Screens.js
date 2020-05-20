@@ -24,6 +24,7 @@ import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
 import NewScreen from "../screens/NewScreen";
 import TasksGoals from "../screens/TasksGoals";
+
 // drawer
 import Menu from "./Menu";
 import DrawerItem from "../components/DrawerItem";
@@ -124,7 +125,10 @@ const MyBuddyStack = createStackNavigator(
         ),
         headerTransparent: true
       })
-    }
+    }/*,
+    SendMessage: {
+      screen: SendMessage
+    }*/
   },
   {
     cardStyle: { backgroundColor: "#FFFFFF" },
