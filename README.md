@@ -24,6 +24,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 
 ## Upload and Download Changes (GIT Push and Pull)
+1. git pull
+2. git add . 
+3. git commit -m 'VersionName' 
+4. git push -u origin master
+
 https://www.datacamp.com/community/tutorials/git-push-pull
 
 Add additional notes about how to deploy this on a live system
