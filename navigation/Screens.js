@@ -15,6 +15,7 @@ import Onboarding from "../screens/Onboarding";
 import Mission from "../screens/Mission";
 import Vission from "../screens/Vission";
 import Profile from "../screens/Profile";
+import ContactHR from "../screens/ContactHR";
 import MyBuddy from "../screens/MyBuddy";
 import Calendar from "../screens/Calendar";
 import Login from "../screens/Login";
@@ -114,6 +115,26 @@ const ProfileStack = createStackNavigator(
     transitionConfig
   }
 );
+
+
+const ContactHRStack = createStackNavigator(
+  {
+    ContactHR: {
+      screen: ContactHR,
+      navigationOptions: ({ navigation }) => ({
+        header: (
+          <Header white transparent title="ContactHR" iconColor={'#FFF'} navigation={navigation} />
+        ),
+        headerTransparent: true
+      })
+    }
+  },
+  {
+    cardStyle: { backgroundColor: "#FFFFFF" },
+    transitionConfig
+  }
+);
+
 const MyBuddyStack = createStackNavigator(
   {
     MyBuddy: {
@@ -265,6 +286,14 @@ const AppStack = createDrawerNavigator(
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Profile" title="Profile" />
+        )
+      })
+    },
+    ContactHR: {
+      screen: ContactHRStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="ContactHR" title="ContactHR" />
         )
       })
     },
