@@ -54,11 +54,10 @@ class Home extends React.Component {
           flexDirection: 'column',
           alignItems: 'center',
         }}>
-          <Block style={{ width: '15%' }}>
+          {/* <Block style={{ width: '15%' }}>
             <Accordion dataArray={data} />
-          </Block>
+          </Block> */}
 
-          <Card item={articles[0]} horizontal  />
           <Card item={articles[0]} horizontal  /> 
           <Card item={articles[1]} horizontal  /> 
           <Card item={articles[2]} horizontal  />

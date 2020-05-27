@@ -13,6 +13,8 @@ import { Block, Text, theme, Input, Checkbox } from "galio-framework";
 import { Button } from "../components";
 import { Images, argonTheme } from "../constants";
 import { HeaderHeight } from "../constants/utils";
+import { Asset } from 'expo-asset';
+import { HitTestResultTypes } from 'expo/build/AR';
 
 const { width, height } = Dimensions.get("screen");
 
@@ -60,112 +62,23 @@ class ContactHR extends React.Component {
               <Block flex style={styles.profileCard}>
                 <Block middle style={styles.avatarContainer}>
                   <Image
-                    source={{ uri: Images.ProfilePicture }}
+                    source={require("../assets/HR.jpeg")}
                     style={styles.avatar}
                   />
                 </Block>
-                <Block style={styles.info}>
-                  <Block
-                    middle
-                    row
-                    space="evenly"
-                    style={{ marginTop: 20, paddingBottom: 24 }}
-                  >
-                    
-                    <Button
-                      small
-                      style={{ backgroundColor: argonTheme.COLORS.INFO }}
-                      onPress={this.onPress}
-                    >
-                      {this.state.textValue}
-                    </Button>
-                    <Button
-                      small
-                      style={{ backgroundColor: argonTheme.COLORS.DEFAULT }}
-                      onPress={() => navigation.navigate("Login")}
-                    >
-                      LOGOUT
-                    </Button>
-                  </Block>
-                  <Block row space="between">
-                    <Block middle>
-                      <Text
-                        bold
-                        size={12}
-                        color="#525F7F"
-                        style={{ marginBottom: 4 }}
-                      >
-                        2
-                      </Text>
-                      <Text size={12}>Tasks Done</Text>
-                    </Block>
-                    <Block middle>
-                      <Text
-                        bold
-                        color="#525F7F"
-                        size={12}
-                        style={{ marginBottom: 4 }}
-                      >
-                        5
-                      </Text>
-                      <Text size={12}>Total Tasks</Text>
-                    </Block>
-                    <Block middle>
-                      <Text
-                        bold
-                        color="#525F7F"
-                        size={12}
-                        style={{ marginBottom: 4 }}
-                      >
-                        89
-                      </Text>
-                      <Text size={12}>Points</Text>
-                    </Block>
-                  </Block>
-                </Block>
+                
                 <Block flex>
                   <Block middle style={styles.nameInfo}>
                     <Text bold size={28} color="#32325D">
-                    Brad Pitt
+                    HR Manager
                     </Text>
-                    <Text size={16} color="#32325D" style={{ marginTop: 10 }}>
-                      Augsburg, DE
-                    </Text>
+                    
                   </Block>
                   <Block middle style={{ marginTop: 30, marginBottom: 16 }}>
                     <Block style={styles.divider} />
                   </Block>
                   <Block middle>
                     
-                  </Block>
-                  
-                  <Block
-                    flex
-                    style={{ paddingVertical: 5 }}
-                  >
-                  <Block flex style={{paddingBottom: 5 }}>
-                    <Text bold size={12} color="#525F7F">
-                        Birth Date:
-                    </Text>
-                      <Input
-                        placeholder="02/04/1997"
-                        style={{ borderColor: "green" }}
-                        help=" "
-                        bottomHelp
-                        placeholderTextColor="#4F8EC9"
-                      />
-                    </Block>
-                  <Block flex style={{paddingBottom: 5 }}>
-                  <Text bold size={12} color="#525F7F">
-                    Adress:
-                    </Text>
-                    <Input
-                        placeholder="Deutschenbaurstraße 39"
-                        style={{ borderColor: "green" }}
-                        help=" "
-                        bottomHelp
-                        placeholderTextColor="#4F8EC9"
-                      />
                   </Block>
 
                   <Block flex style={{paddingBottom: 5 }}>
@@ -180,19 +93,46 @@ class ContactHR extends React.Component {
                         placeholderTextColor="#4F8EC9"
                       />
                   </Block>
-
                   <Block flex style={{paddingBottom: 5 }}>
+                    <Text bold size={12} color="#525F7F" style={{paddingBottom:5}}>Arrange a meeting</Text>
 
-                  <Checkbox color="success" initialValue={true} label="Availability to travel" iconFamily="font-awesome" iconName="plane" />
+                    <Checkbox style={{paddingBottom: 5}} color="success" initialValue={false} label="Yes" />
+                    <Checkbox color="success" initialValue={false} label="No" />
+
                   </Block>
-                    <Block flex style={{ paddingBottom: 10 }}>
-                    <Checkbox color="success" initialValue={false} label="Smoke?" iconFamily="font-awesome" iconName="smoke" />
                   
+                  <Block
+                    flex
+                    style={{ paddingVertical: 5 }}
+                  >
+  
+                  <Block flex style={{paddingBottom: 5 }}>
+                    <Text bold size={12} color="#525F7F">
+                        Meeting Date:
+                    </Text>
+                      <Input
+                        placeholder="28/05/2020"
+                        style={{ borderColor: "green" }}
+                        help=" "
+                        bottomHelp
+                        placeholderTextColor="#4F8EC9"
+                      />
                     </Block>
                   <Block flex style={{paddingBottom: 5 }}>
-                  <Checkbox color="success" initialValue={false} label="Driver License?" iconFamily="font-awesome" iconName="smoke" />
+                  <Text bold size={12} color="#525F7F">
+                    Message:
+                    </Text>
+                    <Block style={styles.textAreaContainer}>
+                      <TextInput style = {{height :120}}
+                      placeholderTextColor="#4F8EC9"
+                      placeholder="Type something"
+                      numberOfLines={10}
+                      multiline={true}
+                      
+                       />
+                       </Block>
                   </Block>
-                  
+
                   </Block>
                   
                   
@@ -241,12 +181,12 @@ const styles = StyleSheet.create({
   },
   avatarContainer: {
     position: "relative",
-    marginTop: -80
+    marginTop: -80,
   },
   avatar: {
-    width: 124,
-    height: 124,
-    borderRadius: 62,
+    width: 128,
+    height: 128,
+    borderRadius: 64,
     borderWidth: 0
   },
   nameInfo: {
@@ -256,6 +196,16 @@ const styles = StyleSheet.create({
     width: "90%",
     borderWidth: 1,
     borderColor: "#E9ECEF"
+  },
+  textAreaContainer: {
+    borderTopLeftRadius: 6,
+    borderTopRightRadius : 6,
+    borderBottomRightRadius : 6,
+    borderBottomLeftRadius : 6,
+    marginTop : 10,
+    borderColor:  "green",
+    borderWidth: 1,
+    padding: 10,
   },
   thumb: {
     borderRadius: 4,

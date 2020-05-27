@@ -25,6 +25,7 @@ const thumbMeasure = (width - 48 - 32) / 3;
 
 
 class MyBuddy extends React.Component {
+  
   state = {
     textValue: 'EDIT',
     count: '0'
@@ -53,45 +54,36 @@ class MyBuddy extends React.Component {
                 </Block>
 
                 <Block style={styles.info}>
-                  <Block
-                    middle
-                    row
-                    space="evenly"
-                    style={{ marginTop: 10, paddingBottom: 20}}
-                  >
-                    <Button
+                 
+                 
+                  <Block middle style={styles.nameInfo}>
+                    <Text bold size={28} color="#32325D" style={{ marginTop: 5 }}>
+                    Brad Pitt
+                    </Text>
+                  </Block>
+
+                  <Block middle style={{height: 40,marginTop:5,paddingBottom:5}}>
+                   <Button
                       round size="small"
                       style={{ backgroundColor: argonTheme.COLORS.DEFAULT }}
                       onPress={() => navigation.navigate("Login")}
                     >
                       SEND MESSAGE
                     </Button>
-
-                  </Block>
-                 
-                  <Block middle style={styles.nameInfo}>
-                    <Text bold size={28} color="#32325D" style={{ marginTop: 5 }}>
-                    Brad Pitt
-                    </Text>
-                    <Text size={16} color="#32325D" style={{ marginTop: 5,marginBottom:20 }}>
-                      Augsburg, DE
-                    </Text>
-                  </Block>
-                  
-                  <Block style={styles.description}>
-                    <Text flex row style={styles.texto}>[Formal position title]</Text>
-                    <Text></Text>
-       
-                    <Text flex row style={styles.texto}>[Description]</Text>
                   </Block>
                 
 
                 </Block>
-
+                
+                  <Block style={styles.description}>
+                    <Text flex row style={styles.texto}>Formal position title: Team Leader</Text>
+                    <Text></Text>
+                  </Block>
+                
 
                 <Block flex>
                   
-                  <Block middle style={{ marginTop: 30, marginBottom: 16 }}>
+                  <Block middle style={{ marginTop: 5, marginBottom: 16 }}>
                     <Block style={styles.divider} />
                   </Block>
                   <Block middle>
@@ -142,11 +134,6 @@ class MyBuddy extends React.Component {
                       />
                   </Block>
 
-                  
-
-                  <Block flex style={{paddingBottom: 5,alignItems:'center'}}>
-                    <Button size="small" >View Profile</Button>
-                  </Block>
       
                   </Block>
                   
@@ -195,6 +182,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 45,
     alignItems : 'center',
   },
+  info2: {
+    paddingHorizontal: 45,
+    alignItems : 'flex-start',
+  },
   avatarContainer: {
     position: "relative",
     marginTop: -80
@@ -212,11 +203,15 @@ const styles = StyleSheet.create({
   description: {
     height: 30,
     marginTop : 10,
-    paddingHorizontal : 50,
+    paddingHorizontal : 10,
+    paddingBottom : 10,
+    paddingRight: 30,
+    alignItems : 'flex-start',
+
   },
   texto : {
     textAlign : 'left',
-    //justifyContent : 'flex-start',
+    paddingRight: 30,
   },
   divider: {
     width: "90%",

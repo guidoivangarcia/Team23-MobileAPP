@@ -91,6 +91,15 @@ class DrawerItem extends React.Component {
             color={focused ? "white" : argonTheme.COLORS.ICON}
           />
         );
+        case "ContactHR":
+        return (
+          <Icon
+            name="ic_mail_24px"
+            family="ArgonExtra"
+            size={12}
+            color={focused ? "white" : argonTheme.COLORS.ICON}
+          />
+        );
       case "Getting Started":
         return <Icon />;
       case "Log out":
